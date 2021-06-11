@@ -37,9 +37,9 @@ body {
 }
 
 .nav {
-  padding: 0px 15px 0px 15px;
+  /*padding: 0px 15px 0px 15px;*/
   height: 100vh;
-  width: 10px;
+  width:40px;
   background-color: rgb(4, 22, 2);
 
   /*display:grid;
@@ -47,53 +47,44 @@ body {
 
   display:flex;
   flex-direction:column;
-  transition: width 0.5s ease-in-out;
+  transition:  0.5s ease-in-out;
 
   &:hover{
-    padding: 0px 30px 0px 30px;
+    padding: 0px 25px 0px 25px;
     width:50px;
     
   }
 
-  &:hover .nav__elem span{
+  &:hover .nav__elem > span{
     display:block;
   }
-
-  &:hover .nav__elem img{
-    width:50px;
-  }
-
-  &:hover .nav__img img{
-    width:50px;
-  }
-
   
 
   &__img{
-    flex-grow:4;
+    flex-grow:6;
     align-self:center;
-    padding: 10px 10px;
-
+    
     & img {
-      width:30px; 
+      padding-top:20px;
+      width:80%; 
       height:auto;
     }
   }
   &__elem{
     flex-grow:1;
     align-self:center;
-    /*flex-basis:100px;*/
     justify-self:flex-end;
+    width:100%;
     
     & span{
       display: none;
     }
     & img{
-      width:30px; height:auto;
+      width:80%; height:auto;
       transition: width 0.5s ease-in-out;
 
       &:hover{
-        width:60px;
+        width:100%;
         height:auto;
         
       }
@@ -102,7 +93,7 @@ body {
   }
 
   &__end{
-    flex-grow:5;
+    flex-grow:7;
     align-self:center;
     padding: 10px 10px;
     display:flex;
