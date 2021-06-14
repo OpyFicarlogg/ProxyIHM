@@ -13,6 +13,10 @@
         <img alt="Vue logo" class="svg-green" src="./assets/file-person.svg">
         <span>About</span>
       </router-link>
+      <router-link class="nav__elem" to="/login">
+        <img alt="Vue logo" class="svg-green" src="./assets/file-person.svg">
+        <span>Login</span>
+      </router-link>
       <div class="nav__end">
         <img alt="Vue logo" class="svg-green" src="./assets/logout.svg">
       </div>
@@ -22,8 +26,15 @@
 
 
 <style lang="scss">
+@font-face {
+  font-family: "ProximaSoft";
+  src: local("ProximaSoft"),
+   url(./assets/fonts/ProximaSoft/ProximaSoft-Light.ttf) format("truetype");
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  
+  font-family: "ProximaSoft" ,Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -47,7 +58,8 @@ body {
 
   display:flex;
   flex-direction:column;
-  transition:  0.5s ease-in-out;
+  align-content:center;
+  transition:  0.5s ease-in-out, opacity 0.5s linear;
 
   &:hover{
     padding: 0px 25px 0px 25px;
@@ -55,14 +67,15 @@ body {
     
   }
 
+
   &:hover .nav__elem > span{
     display:block;
+    opacity: 1;
   }
   
 
   &__img{
     flex-grow:6;
-    align-self:center;
     
     & img {
       padding-top:20px;
@@ -72,20 +85,19 @@ body {
   }
   &__elem{
     flex-grow:1;
-    align-self:center;
-    justify-self:flex-end;
     width:100%;
     
     & span{
       display: none;
+      opacity: 0;
     }
     & img{
-      width:80%; height:auto;
-      transition: width 0.5s ease-in-out;
+      width:80%;
+      transition: width  0.5s ease-in-out, filter 0.75s linear;
 
       &:hover{
         width:100%;
-        height:auto;
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(101deg) brightness(100%) contrast(100%);
         
       }
     }
@@ -94,11 +106,11 @@ body {
 
   &__end{
     flex-grow:7;
-    align-self:center;
     padding: 10px 10px;
     display:flex;
     flex-flow: row wrap;
     align-content:flex-end;
+    justify-content:center;
 
     & img {
       margin-bottom:50px;
@@ -113,11 +125,11 @@ body {
     font-weight: bold;
     color: #42b983;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
 
     &.router-link-exact-active {
       color: #edf8e6;
-      font-weight: 700;
+      font-weight: 800;
       text-decoration:none; 
       cursor:pointer; 
     }
