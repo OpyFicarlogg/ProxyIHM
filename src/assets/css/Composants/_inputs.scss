@@ -1,0 +1,80 @@
+@mixin input(){
+  font-size:16px;
+  height: 32px;
+  border-radius:4px;
+  padding: 10px;
+  @content;
+
+  &:focus{
+    border: 3px solid $main-color ;
+  }
+}
+
+.input-main{
+    
+  @include input(){
+    border: 1px solid #ccc;
+  }
+  &--error{
+    @include input(){
+      border: 2px solid rgb(243, 4, 4);
+    }
+    
+  }
+}
+
+/*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_checkbox*/
+.input-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+
+  & input[type=checkbox] {
+    display:none;
+  }
+
+  & span{
+    margin-left: 10px;
+  }
+  &__check{
+    flex: 0 0 15px;
+    position:relative;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    border-radius: 3px;
+    transition: background-color 0.5s;
+
+    &:after {
+      position: absolute;
+      content: "";
+      left: 5px;
+      top: 3px;
+      width: 3px;
+      height: 6px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      display: none;
+    }
+
+  }
+  //Hover on input not checked
+  &:hover input[type=checkbox] ~ .input-checkbox__check {
+    background-color: #ccc;
+  }
+  //Hover on input checked
+  &:hover input[type=checkbox]:checked ~ .input-checkbox__check {
+    background-color:darken($main-color, 5%);
+  }
+  //If checked color green
+  & input[type=checkbox]:checked ~ .input-checkbox__check {
+    background-color: #42B466;
+  }
+
+  //If checked, show checkmark
+  & input[type=checkbox]:checked ~ .input-checkbox__check:after {
+    display: block;
+  }
+
+}

@@ -1,28 +1,23 @@
 <template>
-  <div class="login">
-    <h1>Login  Page</h1>
-
+  <Page> 
     <LoginComp/>
-  </div>
+  </Page>
+
 
 </template>
 
 
 <script>
 // @ is an alias to /src
+import Page from '@/components/Page.vue'
 import LoginComp from '@/components/login/LoginComp.vue'
 
+
 export default {
-  name: 'Home',
+  name: 'Login',
   components: {
+    Page,
     LoginComp,
   }
 }
 </script>
-
-
-<style scoped lang="scss">
-.login{
-  width:100%;
-}
-</style>
