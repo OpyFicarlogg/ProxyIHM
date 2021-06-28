@@ -9,6 +9,10 @@
         <img alt="Vue logo" class="svg-green" src="@/assets/img/menu/home.svg">
         <span>Home</span>
       </router-link>
+      <router-link class="nav__elem" to="/application">
+        <img alt="Vue logo" class="svg-green" src="@/assets/img/menu/app.svg">
+        <span>App</span>
+      </router-link>
       <router-link class="nav__elem" to="/about">
         <img alt="Vue logo" class="svg-green" src="@/assets/img/menu/file-person.svg">
         <span>About</span>
