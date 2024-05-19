@@ -33,7 +33,6 @@ export default {
   methods:{
     validateEmail(){
       const regMail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      
       if(this.usr =="" || this.usr.indexOf("@") == -1|| regMail.test(String(this.usr).toLowerCase())){
         this.usrClass="input-main";
       }
